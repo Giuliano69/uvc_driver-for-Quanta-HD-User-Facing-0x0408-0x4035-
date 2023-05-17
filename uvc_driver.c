@@ -2669,7 +2669,19 @@ static const struct uvc_device_info uvc_quirk_force_y8 = {
  * though they are compliant.
  */
 static const struct usb_device_id uvc_ids[] = {
-	/* Quanta ACER HD User Facing */
+	/* Quanta ACER HD User Facing 0408:4033*/
+	{ .match_flags 	= USB_DEVICE_ID_MATCH_DEVICE
+			| USB_DEVICE_ID_MATCH_INT_INFO,
+	  .idVendor = 0x0408,
+	  .idProduct = 0x4033,
+	  .bInterfaceClass = USB_CLASS_VIDEO,
+	  .bInterfaceSubClass = 1,
+	  .bInterfaceProtocol =	UVC_PC_PROTOCOL_15,
+	  .driver_info = (kernel_ulong_t) &(const struct uvc_device_info ) {
+										.uvc_version = 0x010a, } },
+
+	
+	/* Quanta ACER HD User Facing 0408:4035*/
 	{ .match_flags 	= USB_DEVICE_ID_MATCH_DEVICE
 			| USB_DEVICE_ID_MATCH_INT_INFO,
 	  .idVendor = 0x0408,
@@ -3224,4 +3236,3 @@ MODULE_AUTHOR(DRIVER_AUTHOR);
 MODULE_DESCRIPTION(DRIVER_DESC);
 MODULE_LICENSE("GPL");
 MODULE_VERSION(DRIVER_VERSION);
-
