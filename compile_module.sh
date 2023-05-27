@@ -1,6 +1,9 @@
 #!/bin/bash 
+sudo apt update # update package list
+sudp apt upgrade # upgrade packages
+sudo apt install build-essential -y # install tools needed for module compilation
 cd ~  # change to your home directory
-apt-get source linux-modules-extra-$(uname -r)  #download in your home, the kernel source file version that match your used kernel
+apt-get source linux-modules-extra-$(uname -r)  #download *** in your home dir *** , the kernel source file version that match your used kernel
 cd ~/linux-*/drivers/media/usb/uvc # change to the currently created uvc directory
 mv uvc_driver.c uvc_driver.old  # rename/backup the uvc driver soruce file, that need to be updated
 wget https://raw.githubusercontent.com/Giuliano69/uvc_driver-for-Quanta-HD-User-Facing-0x0408-0x4035-/main/uvc_driver.c # download the updated driver source file
