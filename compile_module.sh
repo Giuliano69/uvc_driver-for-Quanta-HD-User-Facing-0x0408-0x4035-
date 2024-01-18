@@ -13,7 +13,7 @@ fi
 
 
 sudo apt update # update package list
-sudp apt upgrade # upgrade packages
+sudo apt upgrade # upgrade packages
 sudo apt install build-essential -y # install tools needed for module compilation
 
 #get driver code to compile a patch it
